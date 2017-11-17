@@ -11,5 +11,7 @@ import java.util.List;
 @Transactional
 public interface ProductRepository extends JpaRepository<Product,Long> {
     List<Product> findAllByName(String name);
+    List<Product> findAllByNameStartingWith(String name);
     List<Product> findAllByNameAndPriceAndQuantityAndColorAndCategory(String name, double price, double quantity, String color, String category);
+    List<Product> findAllByCategory(String category);
 }

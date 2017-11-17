@@ -7,6 +7,8 @@ import co.uk.ecpisegroup.pricingkata.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DefaultProductService implements ProductService {
 
@@ -23,5 +25,15 @@ public class DefaultProductService implements ProductService {
                 .setQuantity(productDTO.getQuantity())
                 .createProduct();
         return productRepository.save(newProduct);
+    }
+
+    @Override
+    public List<Product> findAllProductsByNameStartWith(String name){
+        return productRepository.findAllByNameStartingWith(name);
+    }
+
+    @Override
+    public List<Product> findAllProductBasedUponCategory(String category) {
+        return productRepository.findAllByCategory(category);
     }
 }

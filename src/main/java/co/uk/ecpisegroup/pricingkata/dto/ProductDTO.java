@@ -1,10 +1,17 @@
 package co.uk.ecpisegroup.pricingkata.dto;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.Min;
+
 public class ProductDTO {
 
 
+    @NotEmpty
     private String name;
+    @Min(value = 0L)
     private double price;
+    @Min(value = 0L)
     private double quantity;
     private String category;
     private String color;

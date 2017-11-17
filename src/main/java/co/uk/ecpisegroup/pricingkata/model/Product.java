@@ -27,6 +27,14 @@ public class Product {
     private String category;
     private String color;
 
+//    @Override
+//    public boolean equals(Object obj) {
+//        if(obj instanceof Product) {
+//            return name.equals(((Product) obj).name);
+//        }
+//        return false;
+//    }
+
     public String getName() {
         return name;
     }
